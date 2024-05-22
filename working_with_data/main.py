@@ -34,7 +34,8 @@ data["Sonar"] = data["Sonar"] / SM_TO_M
 data["Speed"] = data["Speed"] / SPEED_COEF_2_SEC
 
 #Получения секунд до столкновения
-sec_before_crash = data["Sonar"] / data["Speed"]
+sec_before_crash = np.round(data["Sonar"] / data["Speed"],2)
+
 new_data.insert(3, "seconds", sec_before_crash)
 
 new_data.to_csv("./result/result.csv")
